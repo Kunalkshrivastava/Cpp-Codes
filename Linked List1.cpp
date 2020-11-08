@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<iostream>
 using namespace std;
 
 class node{
@@ -8,7 +9,7 @@ class node{
 		
 		node (int data){
 			this->data = data;
-			next = nullptr;//NULL
+			next = NULL; //nullptr;//NULL
 		}
 };
 
@@ -16,9 +17,17 @@ class linkedList{
 	node *head;
 	
 	linkedList(){
-		head = nullptr;
+		head = NULL; //nullptr;
 	}
 };
+
+void print(node *head){
+	node *temp = head;
+	while(temp != NULL){
+		cout<<temp->data<<" ";
+		temp = temp->next;		
+	}
+}
 
 int main(){
 	
@@ -30,8 +39,8 @@ int main(){
 	
 	//dynamically
 	node *n3 = new node(30);
-	n3->next = &n2;
+	n2.next = n3;
 	node *n4 = new node(40);
-	n4->next = n3;
-	
+	n3->next = n4;
+	print(head);
 }
